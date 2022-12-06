@@ -11,12 +11,14 @@ import { v4 as uuid } from "uuid";
  *
  * BoxList -> NewBoxForm
  */
-interface BoxDetails {
+interface BoxDetails { //TODO: name BoxInterface. put it ABOVE the docstring or DIFF FILE
   height: string;
   width: string;
   backgroundColor: string;
 }
 function NewBoxForm({ createBox }: { createBox: Function }) {
+  // { createBox }: { createBox: (box: BoxDetails) => void }
+  // can type much more specifically for a callback function!
   const [formData, setFormData] = useState<BoxDetails>({
     height: "",
     width: "",

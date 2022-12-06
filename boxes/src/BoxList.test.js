@@ -52,16 +52,16 @@ describe("Tests the BoxList component", function () {
 
   it("works when deleting a box", function () {
     const { container } = render(<BoxList />);
+    helperAddBox(container);
+    // const widthInput = container.querySelector("#newBox-width");
+    // const heightInput = container.querySelector("#newBox-height");
+    // const backgroundColor = container.querySelector("#newBox-backgroundColor");
+    // fireEvent.change(widthInput, { target: { value: 25 } });
+    // fireEvent.change(heightInput, { target: { value: 30 } });
+    // fireEvent.change(backgroundColor, { target: { value: "red" } });
 
-    const widthInput = container.querySelector("#newBox-width");
-    const heightInput = container.querySelector("#newBox-height");
-    const backgroundColor = container.querySelector("#newBox-backgroundColor");
-    fireEvent.change(widthInput, { target: { value: 25 } });
-    fireEvent.change(heightInput, { target: { value: 30 } });
-    fireEvent.change(backgroundColor, { target: { value: "red" } });
-
-    const submitBtn = container.querySelector("#NewBoxForm-addBtn");
-    fireEvent.click(submitBtn);
+    // const submitBtn = container.querySelector("#NewBoxForm-addBtn");
+    // fireEvent.click(submitBtn);
 
     expect(container.innerHTML).toContain(
       `<div class="Box-box" style="height: 30em; width: 25em; background-color: red;">`
@@ -75,3 +75,20 @@ describe("Tests the BoxList component", function () {
     );
   });
 });
+
+function helperAddBox(container) {
+
+  const widthInput = container.querySelector("#newBox-width");
+  const heightInput = container.querySelector("#newBox-height");
+  const backgroundColor = container.querySelector("#newBox-backgroundColor");
+  fireEvent.change(widthInput, { target: { value: 25 } });
+  fireEvent.change(heightInput, { target: { value: 30 } });
+  fireEvent.change(backgroundColor, { target: { value: "red" } });
+
+  const submitBtn = container.querySelector("#NewBoxForm-addBtn");
+  fireEvent.click(submitBtn);
+}
+
+//mocking-- for API calls, and Math randomness.
+//cant test State directly nor change it
+//this is front end testing for the BROWSER, test the PAGE/documnets

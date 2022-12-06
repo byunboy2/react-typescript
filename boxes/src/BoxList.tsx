@@ -10,7 +10,7 @@ import NewBoxForm from "./NewBoxForm";
  *  App --> BoxList --> {NewBoxForm, Box (many)}
  */
 
-interface Boxes {
+interface Boxes { //TODO: rename this Interface
   id: string;
   width: number;
   height: number;
