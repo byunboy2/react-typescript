@@ -1,4 +1,4 @@
-/** Colored box presentation
+/** Colored box presentation, along with removeButton
  *
  * Props:
  * - id (unique)

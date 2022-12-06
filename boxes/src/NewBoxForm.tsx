@@ -69,7 +69,7 @@ function NewBoxForm({ createBox }: { createBox: Function }) {
             value={formData.backgroundColor}
           />
         </div>
-        <button className="NewBoxForm-addBtn">Add a new box!</button>
+        <button className="NewBoxForm-addBtn" id="NewBoxForm-addBtn">Add a new box!</button>
       </form>
     </div>
   );

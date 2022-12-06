@@ -1,12 +1,14 @@
 import { render } from "@testing-library/react";
 import Box from "./Box"
 
-it("renders without crashing", function () {
-  render(<Box />);
-});
+describe("Tests the Box component", function () {
 
-it("matches the snapshot", function () {
-  const { container } = render(<Box />);
-  expect(container).toMatchSnapshot();
-});
+  it("renders without crashing", function () {
+    render(<Box />);
+  });
 
+  it("matches the snapshot", function () {
+    const { container } = render(<Box />);
+    expect(container).toMatchSnapshot();
+  });
+});
