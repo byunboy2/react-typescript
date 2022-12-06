@@ -8,17 +8,24 @@ import NewBoxForm from "./NewBoxForm";
  * - boxes: [ { id, width, height, backgroundColor }, ... ]
  */
 
-function BoxList() {
-  const [boxes, setBoxes] = useState([])
+interface Boxes {
+  id: string;
+  width: number;
+  height: number;
+  backgroundColor: string;
+}
 
+function BoxList() {
+  const [boxes, setBoxes] = useState<Boxes[]>([]);
+  console.log("setBoxes", boxes);
   /** add box with given { id, width, height, backgroundColor } */
-  function add(newBox) {
-    setBoxes(boxes => [...boxes, newBox]);
+  function add(newBox: Boxes ) {
+    setBoxes((boxes: Boxes[]) => [...boxes, newBox]);
   }
 
   /** remove box matching that id. */
   function remove(id: string) {
-    setBoxes(boxes => boxes.filter(box => box.id !== id));
+    setBoxes((boxes: Boxes[]) => boxes.filter((box) => box.id !== id));
   }
 
   return (
