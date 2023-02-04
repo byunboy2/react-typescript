@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tests the Box component matches the snapshot 1`] = `
+<div>
+  <div
+    class="Box"
+  >
+    <div
+      class="Box-box"
+      style="height: 5em; width: 5em;"
+    />
+    <button
+      class="Box-removeBtn"
+    >
+      Remove The Box!
+    </button>
+  </div>
+</div>
+`;
+
 exports[`matches the snapshot 1`] = `
 <div>
   <div
