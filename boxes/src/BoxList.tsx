@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import Box from "./Box";
 import NewBoxForm from "./NewBoxForm";
 
+interface BoxesInterface {
+  id: string;
+  width: number;
+  height: number;
+  backgroundColor: string;
+}
+
+
 /** Manage list of boxes
  *
  * State:
@@ -9,25 +17,16 @@ import NewBoxForm from "./NewBoxForm";
  *
  *  App --> BoxList --> {NewBoxForm, Box (many)}
  */
-
-interface Boxes { //TODO: rename this Interface
-  id: string;
-  width: number;
-  height: number;
-  backgroundColor: string;
-}
-
-function BoxList() {
-  const [boxes, setBoxes] = useState<Boxes[]>([]);
-  console.log("setBoxes", boxes);
+const BoxList: React.FC = () => {
+  const [boxes, setBoxes] = useState<BoxesInterface[]>([]);
   /** add box with given { id, width, height, backgroundColor } */
-  function add(newBox: Boxes ) {
-    setBoxes((boxes: Boxes[]) => [...boxes, newBox]);
+  function add(newBox: BoxesInterface ) {
+    setBoxes((boxes: BoxesInterface[]) => [...boxes, newBox]);
   }
 
   /** remove box matching that id. */
   function remove(id: string) {
-    setBoxes((boxes: Boxes[]) => boxes.filter((box) => box.id !== id));
+    setBoxes((boxes: BoxesInterface[]) => boxes.filter((box) => box.id !== id));
   }
 
   return (

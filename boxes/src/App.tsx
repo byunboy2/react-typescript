@@ -1,5 +1,5 @@
 import BoxList from "./BoxList";
-
+import React from "react";
 /**
  *  Renders the App
  *
@@ -9,12 +9,13 @@ import BoxList from "./BoxList";
  *
  *  App --> BoxList
  */
-function App() {
+const App: React.FC = () => {
   return (
     <div>
       <BoxList />
     </div>
   );
-}
+};
+
 
 export default App;
